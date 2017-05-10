@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KinectJointRecord_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="640">
     <Grid>
-        
+        <Image x:Name="rgbImage" AutomationProperties.Name="rgbImage" Loaded="WindowLoaded" />
+        <Canvas Name="skeletonCanvas"
+                Width="{Binding ElementName=rgbImage, Path=ActualWidth}"
+                Height="{Binding ElementName=rgbImage, Path=ActualHeight}"/>
+        <TextBlock x:Name="SkeletonRecog" HorizontalAlignment="Left" Margin="100,530,0,0" TextWrapping="Wrap" Text="Skeleton Off" VerticalAlignment="Top" RenderTransformOrigin="0.636,0.75"/>
+        <CheckBox x:Name="AllCheck" Content="Check Both Box" HorizontalAlignment="Left" Margin="216,514,0,0" VerticalAlignment="Top" Checked="AllCheck_Checked"/>
+        <CheckBox x:Name="RecordPoints" Content="Points" HorizontalAlignment="Left" Margin="236,529,0,0" VerticalAlignment="Top" Checked="RecordPoints_Checked"/>
+        <CheckBox x:Name="RecordImage" Content="Image" HorizontalAlignment="Left" Margin="236,544,0,0" VerticalAlignment="Top" Checked="RecordImage_Checked"/>
     </Grid>
 </Window>
